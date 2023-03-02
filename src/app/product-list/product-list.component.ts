@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
-import { products } from '../products';
+import { Product } from '../products';
+import { Fournisseur, fournisseurs } from '../fournisseur';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,7 +9,14 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products = products;
+  products : Product[]=[];
+  fournisseurs : Fournisseur[] = fournisseurs;
+  
+  constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+    this.productService.getProducts().subscribe( data => this.products = data );
+  }
 
   share() {
     window.alert('The product has been shared!');

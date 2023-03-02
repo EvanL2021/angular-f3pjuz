@@ -1,3 +1,7 @@
+<div *ngFor="let fournisseur of fournisseurs">
+  {{ fournisseur.name }}
+</div>
+
 <h2>Products</h2>
 <div *ngFor="let product of products">
   <h3>
@@ -5,6 +9,8 @@
       {{ product.name }}
     </a>
   </h3>
+
+  <img src={{product.image}} width="150px"/>
 
   <p *ngIf="product.description">Description: {{ product.description }}</p>
 

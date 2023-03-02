@@ -9,16 +9,17 @@ import { CartService } from '../cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
+
   items = this.cartService.getItems();
 
   checkoutForm = this.formBuilder.group({
     name: '',
-    address: '',
+    address: ''
   });
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {}
 
   onSubmit(): void {
