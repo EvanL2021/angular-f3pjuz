@@ -11,7 +11,7 @@ import { ProductService } from '../product.service';
 export class ProductListComponent {
   products : Product[]=[];
   fournisseurs : Fournisseur[] = fournisseurs;
-  
+
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
@@ -24,6 +24,11 @@ export class ProductListComponent {
 
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
+  }
+
+  changeFrn( id: number ) {
+    this.productService.setFrn( id );
+    this.productService.getProducts().subscribe( data => this.products = data );
   }
 }
 

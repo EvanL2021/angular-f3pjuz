@@ -1,6 +1,8 @@
-<div *ngFor="let fournisseur of fournisseurs">
-  {{ fournisseur.name }}
-</div>
+<nav>
+  <ol *ngFor="let fournisseur of fournisseurs">
+    <li><button type="button" (click)="changeFrn( fournisseur.id )">{{ fournisseur.name }}</button></li>
+  </ol>
+</nav>
 
 <h2>Products</h2>
 <div *ngFor="let product of products">

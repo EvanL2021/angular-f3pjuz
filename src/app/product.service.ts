@@ -22,4 +22,9 @@ export class ProductService {
 
     return of( this.products );
   }
+
+  setFrn( id: number ) {
+    this.fournisseurId = id.toString();
+    this.products = [];
+  }
 }
