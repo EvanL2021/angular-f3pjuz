@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Product } from '../products';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product, products } from '../products';
 
 @Component({
   selector: 'app-product-alerts',
@@ -8,4 +9,5 @@ import { Product } from '../products';
 })
 export class ProductAlertsComponent {
   @Input() product!: Product;
+  @Output() notify = new EventEmitter();
 }
